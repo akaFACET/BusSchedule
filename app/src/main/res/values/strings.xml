@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">BusSchedule</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_search">Поиск</string>
+    <string name="hint_station">остановка</string>
+    <string name="hint_from">откуда</string>
+    <string name="hint_to">куда</string>
+    <string name="btn_save">Записать</string>
+    <string name="snackbar_NoSchedule">Нет такого маршрута, выберите другой</string>
+    <string name="snackbar_ChoiseStation">Выберите остановку</string>
+    <string name="noInternetConnection">Отсутствует интернет соединение</string>
+    <string name="error">Ошибка</string>
+
+</resources>

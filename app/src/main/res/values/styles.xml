@@ -1,0 +1,42 @@
+<resources>
+
+<!--    &lt;!&ndash; Base application theme. &ndash;&gt;-->
+<!--    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+<!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+<!--        <item name="colorPrimary">@color/primaryColor</item>-->
+<!--        <item name="colorPrimaryDark">@color/primaryDarkColor</item>-->
+<!--        <item name="colorAccent">@color/primaryLightColor</item>-->
+<!--    </style>-->
+
+<!--<style name="AppTheme." parent="Theme.MaterialComponents.NoActionBar.Bridge">-->
+<!--&lt;!&ndash;    <item name="colorPrimary">@color/primaryColor</item>&ndash;&gt;-->
+<!--&lt;!&ndash;    <item name="colorPrimaryDark">@color/primaryDarkColor</item>&ndash;&gt;-->
+<!--&lt;!&ndash;    <item name="colorAccent">@color/primaryLightColor</item>&ndash;&gt;-->
+<!--    <item name="colorPrimary">@color/primaryColor</item>-->
+<!--    <item name="colorPrimaryVariant">@color/primaryLightColor</item>-->
+<!--    <item name="colorOnPrimary">@color/primaryDarkColor</item>-->
+<!--    <item name="colorSecondary">@color/secondaryColor</item>-->
+<!--    <item name="colorSecondaryVariant">@color/secondaryLightColor</item>-->
+<!--    <item name="colorOnSecondary">@color/secondaryDarkColor</item>-->
+<!--    <item name="colorError">#F44336</item>-->
+<!--    <item name="colorOnError">#FFFFFF</item>-->
+<!--    <item name="colorSurface">#FFFFFF</item>-->
+<!--    <item name="colorOnSurface">#212121</item>-->
+<!--    <item name="android:colorBackground">@color/primaryLightColor</item>-->
+<!--    <item name="colorOnBackground">#212121</item>-->
+<!--    -->
+
+<!--</style>-->
+
+    <style name="AppTheme." parent="Theme.AppCompat.NoActionBar">
+            <item name="colorPrimary">@color/primaryColor</item>
+            <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+            <item name="colorAccent">@color/primaryLightColor</item>
+
+
+
+    </style>
+
+
+
+</resources>
