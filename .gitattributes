@@ -1,2 +1,2 @@
 * linguist-vendored
-*.kotlin linguist-vendored=false
+*.kt linguist-vendored=false
