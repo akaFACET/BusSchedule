@@ -1,2 +1,6 @@
 * linguist-vendored
+<<<<<<< HEAD
 *.kotlin linguist-vendored=false
+=======
+*.kt linguist-vendored=false
+>>>>>>> origin/master
