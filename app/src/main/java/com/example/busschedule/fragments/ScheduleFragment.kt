@@ -1,16 +1,16 @@
 package com.example.busschedule.fragments
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import androidx.core.view.isGone
-import androidx.core.view.isVisible
-import androidx.lifecycle.ViewModelProviders
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.example.busschedule.R
 import com.example.busschedule.Util.hideKeyboard
 import com.example.busschedule.ViewModels.StationsViewModel
@@ -20,6 +20,7 @@ import com.example.busschedule.data.Exceptions
 import com.example.busschedule.network.Segments
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_schedule.*
+import java.util.*
 
 
 class ScheduleFragment : Fragment() {
@@ -32,6 +33,9 @@ class ScheduleFragment : Fragment() {
     private var isLoading = false
     private var stationCodeFrom = ""
     private var stationCodeTo = ""
+    private lateinit var stationFrom: BusStation
+    private lateinit var stationTo: BusStation
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -156,15 +160,40 @@ class ScheduleFragment : Fragment() {
         from_actv.setOnItemClickListener(AdapterView.OnItemClickListener { parent, _, position, _ ->
             val item = parent.getItemAtPosition(position) as BusStation
             stationCodeFrom = item.stations_codes_yandex_code ?: "null"
+            item
+            stationFrom = item
+            item
         })
 
         to_actv.setOnItemClickListener(AdapterView.OnItemClickListener { parent, _, position, _ ->
             val item = parent.getItemAtPosition(position) as BusStation
             stationCodeTo = item.stations_codes_yandex_code ?: "null"
+            stationTo = item
         })
 
-    }
+        fromLocal_btn.setOnClickListener {
+            if (!from_actv.text.toString().isEmpty()) {
+                val uri = String.format(
+                    Locale.getDefault(),
+                    "geo:${stationFrom.stations_latitude},${stationFrom.stations_longitude}"
+                )
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
+                context!!.startActivity(intent)
+            }
+        }
+        toLocal_btn.setOnClickListener {
+            if (!to_actv.text.toString().isEmpty()) {
+                val uri = String.format(
+                    Locale.getDefault(),
+                    "geo:${stationTo.stations_latitude},${stationTo.stations_longitude}"
+                )
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
+                context!!.startActivity(intent)
+            }
+        }
 
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

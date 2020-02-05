@@ -1,12 +1,14 @@
 package com.example.busschedule.fragments
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.busschedule.R
@@ -17,13 +19,14 @@ import com.example.busschedule.data.BusStation
 import com.example.busschedule.data.Exceptions
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_the_buses.*
-import java.lang.Exception
+import java.util.*
 
 
 class TheBusesFragment : Fragment() {
 
     private lateinit var adapterRV: BusesAdapter
     private lateinit var theBusesViewModel: TheBusesViewModel
+    private lateinit var station: BusStation
     private var RESULT: List<BusStation> = emptyList()
     private var busStationCode: String = ""
     private var isLoading = false
@@ -36,8 +39,6 @@ class TheBusesFragment : Fragment() {
         createTheBusesViewModel()
         createObservers()
         createClickListeners()
-
-
     }
 
 
@@ -114,13 +115,23 @@ class TheBusesFragment : Fragment() {
     }
 
     private fun createClickListeners() {
+
         station_actv.setOnItemClickListener(AdapterView.OnItemClickListener { parent, view, position, id ->
             val item = parent.getItemAtPosition(position) as BusStation
             busStationCode = item.stations_codes_yandex_code ?: "null"
+            station = item
         })
 
-
-
+        stationLocal_btn.setOnClickListener {
+            if (!station_actv.text.isEmpty()) {
+                val uri = String.format(
+                    Locale.getDefault(),
+                    "geo:${station.stations_latitude},${station.stations_longitude}"
+                )
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
+                context!!.startActivity(intent)
+            }
+        }
 
         searchBus_btn.setOnClickListener {
             if (!station_actv.text.isEmpty()) {

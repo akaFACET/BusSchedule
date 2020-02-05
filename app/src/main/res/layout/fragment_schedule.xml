@@ -21,7 +21,6 @@
             app:layout_scrollFlags="scroll">
 
             <AutoCompleteTextView
-                android:textColor="@color/primaryTextColor"
                 android:id="@+id/from_actv"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
@@ -30,26 +29,27 @@
                 android:layout_marginEnd="8dp"
                 android:clickable="true"
                 android:completionThreshold="1"
-                android:textColorHint="@color/primaryTextColor"
-
                 android:hint="@string/hint_from"
-                app:layout_constraintEnd_toEndOf="parent"
+
+                android:textColor="@color/primaryTextColor"
+                android:textColorHint="@color/primaryTextColor"
+                app:layout_constraintEnd_toStartOf="@+id/fromLocal_btn"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <AutoCompleteTextView
-                android:textColor="@color/primaryTextColor"
                 android:id="@+id/to_actv"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:textColorHint="@color/primaryTextColor"
                 android:clickable="true"
                 android:completionThreshold="1"
                 android:hint="@string/hint_to"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/primaryTextColor"
+                android:textColorHint="@color/primaryTextColor"
+                app:layout_constraintEnd_toStartOf="@+id/toLocal_btn"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/from_actv" />
 
@@ -76,6 +76,32 @@
                 android:text="@string/btn_save"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/to_actv" />
+
+            <Button
+                android:id="@+id/fromLocal_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/primaryColor"
+                android:drawableTop="@drawable/ic_location"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/from_actv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/toLocal_btn"
+                android:layout_width="40dp"
+
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/primaryColor"
+                android:drawableTop="@drawable/ic_location"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/to_actv"
+                app:layout_constraintTop_toBottomOf="@+id/fromLocal_btn" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

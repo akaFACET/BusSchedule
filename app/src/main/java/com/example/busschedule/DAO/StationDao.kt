@@ -10,6 +10,6 @@ interface StationDao {
     @Query("SELECT * FROM data ORDER BY title DESC")
     fun getAllStations(): List<Station>
 
-    @Query("SELECT stations_title, stations_codes_yandex_code FROM data WHERE stations_transport_type = 'bus'  ")
+    @Query("SELECT stations_title, stations_codes_yandex_code, stations_longitude, stations_latitude  FROM data WHERE stations_transport_type = 'bus'  ")
     fun getBusStations(): List<BusStation>
 }
