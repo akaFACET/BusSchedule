@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.busschedule.fragments.DetailsFragment
 import com.example.busschedule.R
-import com.example.busschedule.data.SavedScheduleByStation
 import com.example.busschedule.Util.extensions.onClick
+import com.example.busschedule.data.SavedScheduleByStation
+import com.example.busschedule.fragments.DetailsFragment
 
 class FavoritesAdapter(
     var values: List<SavedScheduleByStation>,
@@ -27,7 +27,6 @@ class FavoritesAdapter(
                 .addToBackStack(null)
                 .replace(R.id.main_container, fragment)
                 .commit()
-
         }
     }
 

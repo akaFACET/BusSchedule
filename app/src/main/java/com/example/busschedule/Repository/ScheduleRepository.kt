@@ -1,6 +1,7 @@
 package com.example.busschedule.Repository
 
 import com.example.busschedule.App
+import com.example.busschedule.BuildConfig
 import com.example.busschedule.data.BusStation
 import com.example.busschedule.data.SavedSchedule
 import com.example.busschedule.data.SavedScheduleByStation
@@ -14,7 +15,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 object ScheduleRepository {
 
-    private val API_KEY = "54054e61-e383-4239-bd5c-c64c17d80132"
+    private val API_KEY = BuildConfig.API_KEY
     private val LIMIT = 300
 
     val db = SavedScheduleDB.getInstance(App.instance).getSavedScheduleDAO()
@@ -41,7 +42,7 @@ object ScheduleRepository {
     }
 
     fun getBusStations(): List<BusStation> {
-        var result = StationsDB.getInstance(App.instance).getStations().getBusStations()
+        val result = StationsDB.getInstance(App.instance).getStations().getBusStations()
         return result
     }
 

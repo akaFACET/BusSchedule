@@ -3,8 +3,8 @@ package com.example.busschedule.ViewModels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.busschedule.Util.Mapper
 import com.example.busschedule.Repository.ScheduleRepository
+import com.example.busschedule.Util.Mapper
 import com.example.busschedule.data.BusStation
 import com.example.busschedule.data.Exceptions
 import com.example.busschedule.network.Segments
@@ -12,7 +12,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.net.ConnectException as ConnectException1
 
 class StationsViewModel : ViewModel() {
 
@@ -37,7 +36,6 @@ class StationsViewModel : ViewModel() {
                 )
             }
         }
-
     }
 
 
