@@ -27,10 +27,12 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
+                android:background="@color/primaryColor"
                 android:clickable="true"
                 android:completionThreshold="1"
                 android:hint="@string/hint_from"
-
+                android:elevation="1dp"
+                android:paddingStart="4dp"
                 android:textColor="@color/primaryTextColor"
                 android:textColorHint="@color/primaryTextColor"
                 app:layout_constraintEnd_toStartOf="@+id/fromLocal_btn"
@@ -44,9 +46,12 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
+                android:background="@color/primaryColor"
                 android:clickable="true"
                 android:completionThreshold="1"
                 android:hint="@string/hint_to"
+                android:elevation="1dp"
+                android:paddingStart="4dp"
                 android:textColor="@color/primaryTextColor"
                 android:textColorHint="@color/primaryTextColor"
                 app:layout_constraintEnd_toStartOf="@+id/toLocal_btn"
@@ -54,7 +59,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/from_actv" />
 
             <Button
-                android:background="@color/secondaryColor"
+                android:background="@drawable/ripple_effect"
                 android:textColor="@color/secondaryTextColor"
                 android:id="@+id/search_btn"
                 android:layout_width="wrap_content"
@@ -66,7 +71,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/to_actv" />
 
             <Button
-                android:background="@color/secondaryColor"
+                android:background="@drawable/ripple_effect"
                 android:textColor="@color/secondaryTextColor"
                 android:id="@+id/save_btn"
                 android:layout_width="wrap_content"
