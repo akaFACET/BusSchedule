@@ -18,7 +18,11 @@ class Mapper {
         }
         private fun mapSegment(segments: Segments): SavedSchedule {
             return SavedSchedule(0,segments.from!!.code+segments.to!!.code,
-                segments.thread!!.title!!,segments.days!!,segments.thread!!.number!!,segments.arrival!!)
+                segments.thread!!.title!!,
+                segments.days!!,
+                segments.thread.number!!,
+                segments.departure!!
+            )
         }
 
         fun mapToSavedStation(segments: List<Segments>): SavedStations{

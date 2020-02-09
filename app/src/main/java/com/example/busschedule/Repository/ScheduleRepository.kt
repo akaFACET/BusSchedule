@@ -26,6 +26,7 @@ object ScheduleRepository {
             savedStations, savedSchedule
         )
     }
+
     @ExperimentalCoroutinesApi
     suspend fun getDataByOneStation(station:String): List<Schedule>{
         val theSheduleApiService = NetworkModule.theSheduleApiService
@@ -33,6 +34,7 @@ object ScheduleRepository {
         result.await()
         return result.getCompleted().schedule?: emptyList()
     }
+
     @ExperimentalCoroutinesApi
     suspend fun getDataByTwoStations(from: String, to: String): List<Segments> {
         val theSheduleApiService = NetworkModule.theSheduleApiService
@@ -40,6 +42,7 @@ object ScheduleRepository {
         result.await()
         return result.getCompleted().segments ?: emptyList()
     }
+
 
     fun getBusStations(): List<BusStation> {
         val result = StationsDB.getInstance(App.instance).getStations().getBusStations()

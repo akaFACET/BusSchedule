@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -20,6 +19,7 @@ import com.example.busschedule.data.Exceptions
 import com.example.busschedule.network.Segments
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_schedule.*
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import java.util.*
 
 
@@ -93,16 +93,11 @@ class ScheduleFragment : Fragment() {
             }
         })
 
-        stationsViewModel.schedule.observe(this, Observer { arg ->
-            schedule = arg
-        })
-
-
 
 
         stationsViewModel.schedule.observe(this, Observer { stations ->
             adapterRv.values = stations
-
+            schedule = stations
             when (exceptions) {
                 Exceptions.noSchedule -> {
                     Snackbar
@@ -135,6 +130,7 @@ class ScheduleFragment : Fragment() {
         })
     }
 
+    @ExperimentalCoroutinesApi
     private fun createClickListeners() {
         save_btn.setOnClickListener {
             if (!schedule.isEmpty()) {
@@ -157,19 +153,17 @@ class ScheduleFragment : Fragment() {
             }
         }
 
-        from_actv.setOnItemClickListener(AdapterView.OnItemClickListener { parent, _, position, _ ->
+        from_actv.setOnItemClickListener { parent, _, position, _ ->
             val item = parent.getItemAtPosition(position) as BusStation
             stationCodeFrom = item.stations_codes_yandex_code ?: "null"
-            item
             stationFrom = item
-            item
-        })
+        }
 
-        to_actv.setOnItemClickListener(AdapterView.OnItemClickListener { parent, _, position, _ ->
+        to_actv.setOnItemClickListener { parent, _, position, _ ->
             val item = parent.getItemAtPosition(position) as BusStation
             stationCodeTo = item.stations_codes_yandex_code ?: "null"
             stationTo = item
-        })
+        }
 
         fromLocal_btn.setOnClickListener {
             if (!from_actv.text.toString().isEmpty()) {

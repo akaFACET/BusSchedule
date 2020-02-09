@@ -30,11 +30,11 @@ interface SavedScheduleDAO {
     fun getScheduleByCodeStation(nameCode: String): SavedScheduleByStation
 
     @Transaction
-    @Query("SELECT * from SavedStations")
+    @Query("SELECT * from SavedStations ORDER BY nameCode")
     fun getAllSavedSchedule(): LiveData<List<SavedScheduleByStation>>
 
     @Transaction
-    @Query("SELECT * from SavedStations")
+    @Query("SELECT * from SavedStations ORDER BY nameCode")
     fun getAllSavedScheduleList(): List<SavedScheduleByStation>
 
     @Query("SELECT * FROM SavedSchedule")
