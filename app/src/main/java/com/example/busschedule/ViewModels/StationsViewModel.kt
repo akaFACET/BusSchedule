@@ -41,6 +41,9 @@ class StationsViewModel : ViewModel() {
 
     @ExperimentalCoroutinesApi
     fun getSchedule(from: String, to: String) {
+
+        exceptions.value = Exceptions.noException
+
         if (stationCodeTo != to || stationCodeFrom != from) {
             viewModelScope.launch {
                 try {

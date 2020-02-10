@@ -48,7 +48,7 @@ class TheBusesFragment : Fragment() {
 
     private fun createObservers() {
 
-        theBusesViewModel.isLoading.observe(this, Observer { arg ->
+        theBusesViewModel.isLoading.observe(viewLifecycleOwner, Observer { arg ->
             isLoading = arg
             if (isLoading) {
                 buses_progressBar.visibility = View.VISIBLE
@@ -57,7 +57,7 @@ class TheBusesFragment : Fragment() {
             }
         })
 
-        theBusesViewModel.busStations.observe(this, Observer { arg ->
+        theBusesViewModel.busStations.observe(viewLifecycleOwner, Observer { arg ->
             RESULT = arg
             val adapter: ArrayAdapter<BusStation> = ArrayAdapter(
                 context!!,
@@ -68,10 +68,10 @@ class TheBusesFragment : Fragment() {
             station_actv.setAdapter(adapter)
             adapter.notifyDataSetChanged()
         })
-        theBusesViewModel.exceptions.observe(this, Observer { arg ->
+        theBusesViewModel.exceptions.observe(viewLifecycleOwner, Observer { arg ->
             exceptions = arg
         })
-        theBusesViewModel.buses.observe(this, Observer { buses ->
+        theBusesViewModel.buses.observe(viewLifecycleOwner, Observer { buses ->
             adapterRV.values = buses
 
             when (exceptions) {

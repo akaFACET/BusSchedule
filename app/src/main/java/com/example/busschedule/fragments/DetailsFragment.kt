@@ -58,7 +58,7 @@ class DetailsFragment : Fragment() {
         position =
             arguments?.getInt(DATA) ?: throw IllegalArgumentException("Missing data")
 
-        viewModel.savedScheduleByStation.observe(this, Observer { arg ->
+        viewModel.savedScheduleByStation.observe(viewLifecycleOwner, Observer { arg ->
             adapterRv.values = arg.get(position).schedule
             station = arg.get(position)
             adapterRv.notifyDataSetChanged()
@@ -66,7 +66,7 @@ class DetailsFragment : Fragment() {
 
         details_rv.adapter = adapterRv
 
-        viewModel.isLoading.observe(this, Observer { arg ->
+        viewModel.isLoading.observe(viewLifecycleOwner, Observer { arg ->
             isLoading = arg
 
             if (!isLoading) {
@@ -74,7 +74,7 @@ class DetailsFragment : Fragment() {
             }
         })
 
-        viewModel.exceptions.observe(this, Observer { arg ->
+        viewModel.exceptions.observe(viewLifecycleOwner, Observer { arg ->
             exceptions = arg
             when (exceptions) {
                 Exceptions.noInternet -> {

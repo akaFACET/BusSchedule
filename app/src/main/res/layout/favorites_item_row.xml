@@ -1,28 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="54dp"
     android:layout_marginBottom="1dp"
     android:layout_marginTop="1dp"
     android:orientation="horizontal"
     android:gravity="center_vertical"
-    android:weightSum="100"
-    >
+    android:weightSum="100">
 
     <TextView
         android:textColor="@color/secondaryColor"
-        android:background="@color/primaryColor"
+        android:background="@drawable/ripple_effect_item_row"
         android:id="@+id/tv_from"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginEnd="2dp"
         android:layout_weight="50"
-
         android:gravity="center"
         android:paddingTop="2dp"
-
         android:text="11111111"
         android:textSize="14sp"
         android:textStyle="bold" />
@@ -34,7 +29,7 @@
         android:layout_height="match_parent"
 
         android:layout_weight="50"
-        android:background="@color/primaryColor"
+        android:background="@drawable/ripple_effect_item_row"
         android:gravity="center"
         android:paddingTop="2dp"
         android:text="303A"

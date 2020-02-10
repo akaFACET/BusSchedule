@@ -65,12 +65,12 @@ class ScheduleFragment : Fragment() {
 
     private fun createObservers() {
 
-        stationsViewModel.exceptions.observe(this, Observer { arg ->
+        stationsViewModel.exceptions.observe(viewLifecycleOwner, Observer { arg ->
             exceptions = arg
         })
 
 
-        stationsViewModel.busStations.observe(this, Observer { arg ->
+        stationsViewModel.busStations.observe(viewLifecycleOwner, Observer { arg ->
             RESULT = arg
             val adapter: ArrayAdapter<BusStation> = ArrayAdapter(
                 context!!,
@@ -84,7 +84,7 @@ class ScheduleFragment : Fragment() {
 
         })
 
-        stationsViewModel.isLoading.observe(this, Observer { arg ->
+        stationsViewModel.isLoading.observe(viewLifecycleOwner, Observer { arg ->
             isLoading = arg
             if (isLoading) {
                 progressBar.visibility = View.VISIBLE
@@ -95,9 +95,10 @@ class ScheduleFragment : Fragment() {
 
 
 
-        stationsViewModel.schedule.observe(this, Observer { stations ->
+        stationsViewModel.schedule.observe(viewLifecycleOwner, Observer { stations ->
             adapterRv.values = stations
             schedule = stations
+
             when (exceptions) {
                 Exceptions.noSchedule -> {
                     Snackbar
@@ -122,16 +123,15 @@ class ScheduleFragment : Fragment() {
                             getString(R.string.error),
                             Snackbar.LENGTH_LONG
                         ).show()
-
                 }
             }
-
             adapterRv.notifyDataSetChanged()
         })
     }
 
     @ExperimentalCoroutinesApi
     private fun createClickListeners() {
+
         save_btn.setOnClickListener {
             if (!schedule.isEmpty()) {
                 stationsViewModel.saveData()
@@ -175,6 +175,7 @@ class ScheduleFragment : Fragment() {
                 context!!.startActivity(intent)
             }
         }
+
         toLocal_btn.setOnClickListener {
             if (!to_actv.text.toString().isEmpty()) {
                 val uri = String.format(
@@ -194,7 +195,6 @@ class ScheduleFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-
         return inflater.inflate(R.layout.fragment_schedule, container, false)
     }
 

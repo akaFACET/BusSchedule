@@ -1,10 +1,10 @@
 package com.example.busschedule.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -53,7 +53,7 @@ class FavoritesFragment : Fragment() {
         val itemTouchHelper = ItemTouchHelper(swipeHelper)
         itemTouchHelper.attachToRecyclerView(favorites_rv)
 
-        ScheduleRepository.db.getAllSavedSchedule().observe(this, Observer {
+        ScheduleRepository.db.getAllSavedSchedule().observe(viewLifecycleOwner, Observer {
             adapterRv.values = it
             schedule = it
             adapterRv.notifyDataSetChanged()
