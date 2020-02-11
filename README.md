@@ -1,5 +1,5 @@
 ## BusSchedule
-Android Sample app to finding the schedule suburban buses. (in Republic of Belarus)
+This is android sample app for finding the schedule of suburban buses. (in Republic of Belarus)
 
 [GET .APK](https://github.com/akaFACET/BusSchedule/raw/master/app/release/app-release.apk)
 
@@ -19,26 +19,26 @@ Android Sample app to finding the schedule suburban buses. (in Republic of Belar
 
 ## How it looks:
 
-Schedule search
+### Search
 
 ![Search](https://github.com/akaFACET/BusSchedule/blob/master/demo/search.gif)
 
 
-Save
+### Add to favorite
 
 ![Save](https://github.com/akaFACET/BusSchedule/blob/master/demo/save.gif)
 
 
-Update and delete 
+### Update and delete 
 
 ![Update and delete ](https://github.com/akaFACET/BusSchedule/blob/master/demo/update%20and%20delete.gif)
 
 
-Search buses by one station 
+### Search buses by one station 
 
 ![Search buses by one station](https://github.com/akaFACET/BusSchedule/blob/master/demo/searchByOneStation.gif)
 
 
-Location 
+### Location 
 
 ![Location](https://github.com/akaFACET/BusSchedule/blob/master/demo/location.gif)
