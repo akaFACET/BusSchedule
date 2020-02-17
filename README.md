@@ -9,6 +9,8 @@ This is android sample app for finding the schedule of suburban buses. (in Repub
 
 -[Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html)
 
+-[MVVM pattern](https://developer.android.com/jetpack/docs/guide)
+
 -[Retrofit](https://square.github.io/retrofit/)
 
 -[Moshi](https://github.com/square/moshi)
