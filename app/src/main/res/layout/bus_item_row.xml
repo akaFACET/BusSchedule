@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="54dp"
@@ -8,8 +7,7 @@
     android:layout_marginTop="1dp"
     android:orientation="horizontal"
     android:gravity="center_vertical"
-    android:weightSum="100"
-    >
+    android:weightSum="100">
 
     <TextView
         android:textColor="@color/secondaryColor"
@@ -22,7 +20,7 @@
 
         android:gravity="center"
         android:padding="2dp"
-        android:text="11:00"
+        tools:text="11:00"
         android:textSize="14sp" />
 
     <TextView
@@ -35,7 +33,7 @@
         android:background="@color/primaryColor"
         android:gravity="center"
         android:padding="2dp"
-        android:text="1111111111111111111111111111111111111111111111111111111111111111"
+        tools:text="1111111111111111111111111111111111111111111111111111111111111"
         android:textSize="12sp"
         android:textStyle="bold" />
 
@@ -50,7 +48,7 @@
 
         android:gravity="center"
         android:padding="2dp"
-        android:text="303A"
+        tools:text="303A"
         android:textSize="14sp" />
 
     <TextView
@@ -60,10 +58,9 @@
         android:layout_weight="50"
         android:background="@color/primaryColor"
         android:gravity="center"
-        android:text="Привольный-большой тростенец"
+        tools:text="Привольный-большой тростенец"
         android:textColor="@color/primaryTextColor"
         android:textSize="13sp"
         android:textStyle="bold" />
-
 
 </androidx.appcompat.widget.LinearLayoutCompat>

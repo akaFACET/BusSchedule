@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.busschedule.R
 import com.example.busschedule.data.SavedSchedule
-import com.example.busschedule.network.Segments
 
 class DetailsAdapter(
     var values: List<SavedSchedule>,

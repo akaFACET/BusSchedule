@@ -3,15 +3,10 @@ package com.example.busschedule.ViewModels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.busschedule.App
 import com.example.busschedule.Repository.ScheduleRepository
 import com.example.busschedule.data.BusStation
 import com.example.busschedule.data.Exceptions
-import com.example.busschedule.databases.StationsDB
-import com.example.busschedule.network.NetworkModule
 import com.example.busschedule.network.Schedule
-import com.example.busschedule.network.Segments
-import com.example.busschedule.network.Station
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
