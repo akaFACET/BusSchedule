@@ -20,7 +20,6 @@ object ScheduleRepository {
 
     val db = SavedScheduleDB.getInstance(App.instance).getSavedScheduleDAO()
 
-
     suspend fun saveData(savedStations: SavedStations, savedSchedule: List<SavedSchedule>) {
         db.saveData(
             savedStations, savedSchedule
@@ -48,7 +47,6 @@ object ScheduleRepository {
         val result = StationsDB.getInstance(App.instance).getStations().getBusStations()
         return result
     }
-
 
 
     fun getAllSavedSchedule():List<SavedScheduleByStation>{

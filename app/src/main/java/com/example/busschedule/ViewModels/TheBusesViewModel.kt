@@ -42,6 +42,7 @@ class TheBusesViewModel : ViewModel() {
                     exceptions.value = Exceptions.noInternet
                     buses.value = emptyList()
                 } catch (ex: Throwable) {
+                    isLoading.value = false
                     exceptions.value = Exceptions.noSchedule
                     buses.value = emptyList()
 

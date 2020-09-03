@@ -64,7 +64,6 @@ class ScheduleFragment : Fragment() {
     }
 
     private fun createObservers() {
-
         stationsViewModel.exceptions.observe(viewLifecycleOwner, Observer { arg ->
             exceptions = arg
         })

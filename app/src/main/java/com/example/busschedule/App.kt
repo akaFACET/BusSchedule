@@ -1,7 +1,6 @@
 package com.example.busschedule
 
 import android.app.Application
-import android.util.Log
 
 class App : Application() {
 
@@ -11,8 +10,6 @@ class App : Application() {
     }
 
     companion object {
-
         lateinit var instance: App
-
     }
 }

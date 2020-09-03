@@ -70,6 +70,7 @@ class StationsViewModel : ViewModel() {
                     exceptions.value = Exceptions.noInternet
                     schedule.value = emptyList()
                 } catch (ex: Throwable) {
+
                     exceptions.value = Exceptions.noSchedule
                     schedule.value = emptyList()
                     isLoading.value = false

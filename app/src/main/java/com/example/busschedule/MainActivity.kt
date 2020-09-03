@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity() {
 
     private val adapter by lazy { ViewPagerAdapter(this) }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -26,7 +25,6 @@ class MainActivity : AppCompatActivity() {
                 when (position) {
                     0 -> {
                         tab.text = "Расписание"
-
                         tab.setIcon(R.drawable.ic_list_black_24dp)
                     }
                     1 -> {
