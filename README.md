@@ -1,6 +1,9 @@
 ## BusSchedule
 This is android sample app for finding the schedule of suburban buses. (in Republic of Belarus)
 
+**UPDATE**
+**Recently, Yandex has stopped updating the schedule for most suburban bus stops. In this regard, the application has become useless**
+
 [GET .APK](https://github.com/akaFACET/BusSchedule/raw/master/app/release/app-release.apk)
 
 ## Using:
